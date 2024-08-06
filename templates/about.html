@@ -8,15 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>พีรพัฒน์ สุทธปัญญา</title>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@900&display=swap");
+      @import url("@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');");
 
       body {
-        font-family: "Sarabun", sans-serif;
+        .bebas-neue-regular {
+          font-family: "Bebas Neue", sans-serif;
+          font-weight: 400;
+          font-style: normal;
+        }
+
         line-height: 1.6;
+        display: inline;
         margin: 0;
         padding: 0;
         background-color: #ffffff;
-        color: #333;
+        color: #000000;
       }
       .container {
         max-width: 700px;
@@ -29,10 +35,14 @@
         align-items: center;
         margin-bottom: 20px;
       }
+
       .header h1 {
-        font-size: 2.5em;
-        margin: 0;
-        font-weight: 900; /* ปรับน้ำหนักตัวหนังสือ */
+        display: inline;
+        font-size: 40px;
+        font-weight: 900;
+        line-height: 42px;
+        overflow-wrap: break-word;
+        word-break: break-word;
       }
       .header img {
         margin-left: 10px;
@@ -41,21 +51,35 @@
       }
       .birthdate {
         display: flex;
+        column-gap: 6px;
         align-items: center;
-        font-size: 1em;
-        color: #555;
-        margin-top: 5px;
+        font-weight: 500;
+        line-height: 17px;
+        font-size: 14px pretendard;
+        color: #000000;
+        margin-top: 0.05px;
+        position: relative;
       }
       .birthdate img {
-        margin-right: 5px;
-        width: 16px;
-        height: 16px;
+        margin: -3px 0px -1px;
+        width: 20px; /* ปรับขนาดตามต้องการ */
+        height: 20px; /* ปรับขนาดตามต้องการ */
+        border-radius: 20px 20px 15px 15px; /* โค้งมุมด้านบนซ้ายและขวา */
+        object-fit: cover; /* ทำให้ภาพปรับตัวให้เต็มพื้นที่ */
+        clip-path: polygon(
+          0 0,
+          100% 0,
+          77% 100%,
+          22% 100%
+        ); /* ทำให้ด้านล่างแคบลง */
       }
       h2 {
-        font-size: 1.5em;
-        margin-top: 1.5em;
-        margin-bottom: 0.5em;
-        color: #555;
+        display: block;
+        font-size: 10px;
+        line-height: 26px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
       .section {
         margin-bottom: 30px;
@@ -85,24 +109,51 @@
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="header">
+    <div
+      class="container text-shadow font-size: 48px; font-family: Arial, sans-serif; font-weight: 900;"
+    >
+      <div class="header text-dark">
         <h1>PHIRAPAT SUTTAPANYA</h1>
       </div>
-      <div class="birthdate">
+      <div class="birthdate section">
         <img
-          src="https://img.icons8.com/ios-glyphs/30/000000/birthday-cake.png"
+          src="https://img.icons8.com/?size=100&id=101419&format=png&color=000000"
           alt="birthday icon"
         />
-        <span>2000.04.11</span>
+        <span class="fw-medium text-dark">2005.04.06</span>
       </div>
 
       <hr />
 
-      <div class="section">
+      <style>
+        .section {
+          padding: 20px;
+          border-radius: 0; /* เอากรอบออก */
+          box-shadow: none; /* เอาเงาออก */
+          background-color: transparent; /* เอาสีพื้นหลังออก */
+        }
+        .text-dark {
+          color: #343a40;
+        }
+        .text-shadow {
+          text-shadow: none; /* เอาเงาออก */
+        }
+        h2 {
+          margin-bottom: 15px;
+          font-size: 24px;
+          color: #000000; /* สีเข้มขึ้น */
+          font-weight: bold; /* ทำให้ตัวหนังสือหนา */
+        }
+        p {
+          font-size: 16px;
+          /* ตัวหนังสือไม่หนาและสีไม่เปลี่ยน */
+        }
+      </style>
+
+      <div class="section text-dark text-shadow">
         <h2>ข้อมูลส่วนตัว</h2>
         <p>
-          วันเกิด: 2000.04.11<br />
+          วันเกิด: 2005.04.06<br />
           ที่อยู่: [ที่อยู่ปัจจุบัน]<br />
           อีเมล: [อีเมล]
         </p>
@@ -110,7 +161,7 @@
 
       <hr />
 
-      <div class="section">
+      <div class="section text-dark text-shadow">
         <h2>การศึกษา</h2>
         <ul>
           <li>[ระดับการศึกษา] [ชื่อสถาบัน] ([ปีที่จบการศึกษา])</li>
@@ -120,7 +171,7 @@
 
       <hr />
 
-      <div class="section">
+      <div class="section text-dark text-shadow">
         <h2>ประสบการณ์การทำงาน</h2>
         <ul>
           <li>[ตำแหน่ง], [ชื่อบริษัท] ([ปีที่เริ่ม] - [ปีที่สิ้นสุด])</li>
@@ -130,7 +181,7 @@
 
       <hr />
 
-      <div class="section">
+      <div class="section text-dark text-shadow">
         <h2>ทักษะและความสามารถ</h2>
         <ul>
           <li>[ทักษะ 1]</li>
@@ -141,7 +192,7 @@
 
       <hr />
 
-      <div class="section">
+      <div class="section text-dark text-shadow">
         <h2>ผลงานและรางวัล</h2>
         <ul>
           <li>[ผลงานหรือรางวัล 1]</li>
