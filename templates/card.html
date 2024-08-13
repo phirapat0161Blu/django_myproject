@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+<!---->
+{% block contant %}
+<div class="container">
+  <style>
+    .card-hover {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-wrapper {
+      padding: 15px;
+      height: 100%; /* กำหนดความสูงของการ์ดให้เต็มพื้นที่ */
+    }
+
+    .card-img {
+      height: 200px; /* กำหนดความสูงของรูปภาพ */
+      object-fit: cover; /* ปรับรูปภาพให้ครอบคลุมพื้นที่ทั้งหมด */
+    }
+
+    .card-body {
+      flex-grow: 1; /* ให้ card-body ยืดหยุ่นเพื่อเติมพื้นที่ว่าง */
+    }
+
+    .row {
+      margin: -15px;
+    }
+
+    .col-lg-3,
+    .col-md-4,
+    .col-sm-6 {
+      padding: 15px;
+    }
+  </style>
+  <div class="row">
+    {% for i in list %}
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card card-hover card-wrapper" style="width: 100%">
+        <img
+          src="https://pbs.twimg.com/media/GTPCif7aoAA1_eD?format=jpg&name=large"
+          class="card-img"
+          alt=""
+        />
+        <div class="card-body">
+          <h5 class="card-title">0161</h5>
+          <p class="card-text">👻🤡🧚🏻‍♂️</p>
+          <a href="#" class="btn btn-primary">READ</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card card-hover card-wrapper" style="width: 100%">
+        <img
+          src="https://i.pinimg.com/564x/31/12/1c/31121c89d6a0f08709c344f84ae5f5ff.jpg"
+          class="card-img"
+          alt=""
+        />
+        <div class="card-body">
+          <h5 class="card-title">GOAT</h5>
+          <p class="card-text">GOAT of japan</p>
+          <a href="#" class="btn btn-primary">READ</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card card-hover card-wrapper" style="width: 100%">
+        <img
+          src="https://i.pinimg.com/280x280_RS/7d/b6/25/7db625bf29c9325baf17ddc229de5922.jpg"
+          class="card-img"
+          alt=""
+        />
+        <div class="card-body">
+          <h5 class="card-title">God of Cat</h5>
+          <p class="card-text">import ig</p>
+          <a href="#" class="btn btn-primary">READ</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card card-hover card-wrapper" style="width: 100%">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1CyYKW_sToRJOR2jvM1PdQUl5A1rnvRvICoCNDbTjoCHRo_-X"
+          class="card-img"
+          alt=""
+        />
+        <div class="card-body">
+          <h5 class="card-title">BLUURINA</h5>
+          <p class="card-text">😶‍🌫️🦋</p>
+          <a href="#" class="btn btn-primary">READ</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card card-hover card-wrapper" style="width: 100%">
+        <img
+          src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSdyp5GSQX4cPjhIqVZJ1I3mkJsu-Y_ADnyM7sEg2hgkYzsH42U"
+          class="card-img"
+          alt=""
+        />
+        <div class="card-body">
+          <h5 class="card-title">GOD</h5>
+          <p class="card-text">god of the word👩‍🦳👱‍♀️🧑‍🦳👩‍🦱</p>
+          <a href="#" class="btn btn-primary">READ</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card card-hover card-wrapper" style="width: 100%">
+        <img
+          src="https://i.pinimg.com/564x/bf/a6/e0/bfa6e06cb4fd3076b037c3fe82791566.jpg"
+          class="card-img"
+          alt=""
+        />
+        <div class="card-body">
+          <h5 class="card-title">DUO</h5>
+          <p class="card-text">Pink and Yellow💛💗</p>
+          <a href="#" class="btn btn-primary">READ</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card card-hover card-wrapper" style="width: 100%">
+        <img
+          src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTSnSFPnrv_Sl1t0Duaf-NPBNaB2UadWOmV55VljtltvVNiUhc2"
+          class="card-img"
+          alt=""
+        />
+        <div class="card-body">
+          <h5 class="card-title">XEESOXEE</h5>
+          <p class="card-text">mysterious girl🦋</p>
+          <a href="#" class="btn btn-primary">READ</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card card-hover card-wrapper" style="width: 100%">
+        <img
+          src="https://i.pinimg.com/564x/58/3c/39/583c3948d47a44998008322b74bdd62e.jpg"
+          class="card-img"
+          alt=""
+        />
+        <div class="card-body">
+          <h5 class="card-title">Who</h5>
+          <p class="card-text">Whoever said that, try to guess👑</p>
+          <a href="#" class="btn btn-primary">READ</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock contant %}

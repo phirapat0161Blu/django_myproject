@@ -15,6 +15,21 @@ def contactPage(request):
     return render(request, 'contact.html')
 
 
+def table_Page(request):
+    context = {}
+    lt = list(range(0, 106))
+    context["list"] = lt
+
+    return render(request, 'table_page.html', context)
+
+
+def cardView(request):
+    context = {}
+    lt = list(range(0, 100))
+    context["list"] = lt
+    return render(request, 'card.html', context)
+
+
 def cardColorPage(request):
     context = {
         'color': 'all',
