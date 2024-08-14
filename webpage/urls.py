@@ -7,4 +7,5 @@ urlpatterns = [
     path("table/", views.table_Page, name="table-page"),
     path("card/", views.cardView, name="card-page"),
     path("color/", views.cardColorPage, name="cardcolor"),
+    path("form/", views.formPage, name="form-page"),
 ]
