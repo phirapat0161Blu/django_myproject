@@ -51,7 +51,7 @@ def formPage(request):
         email = request.POST.get('email')
         password = request.POST.get('my-password')
 
-        context['email'] = email
-        context['password'] = password
+    context['email'] = email
+    context['password'] = password
 
-    return render(request, 'form_page.html')
+    return render(request, 'form_page.html', context)
