@@ -5,8 +5,12 @@
   <div class="container-fluid px-4">
     <h1 class="mt-4">ฟอร์มสำหรับส่งข้อมูล</h1>
 
-    <h1>{{ email }}</h1>
-    <h1>{{ password }}</h1>
+    {% if email != '' and password != '' %}
+    <div class="mb-4 mt-4">
+      <h3>email : {{ email }}</h3>
+      <h3>password : {{ password }}</h3>
+    </div>
+    {% endif %}
 
     <form action="" method="POST">
       {% csrf_token %}

@@ -1,0 +1,167 @@
+<template>
+  <div class="container mt-5">
+    <form @submit.prevent="submitForm" novalidate>
+      <div class="mb-3">
+        <label for="firstName" class="form-label">ชื่อ</label>
+        <input
+          type="text"
+          class="form-control"
+          :class="{ 'is-invalid': !isValid.firstName }"
+          id="firstName"
+          v-model="formData.firstName"
+          @blur="validateField('firstName')"
+          required
+        />
+        <div class="invalid-feedback">กรุณากรอกชื่อ</div>
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label">นามสกุล</label>
+        <input
+          type="text"
+          class="form-control"
+          :class="{ 'is-invalid': !isValid.lastName }"
+          id="lastName"
+          v-model="formData.lastName"
+          @blur="validateField('lastName')"
+          required
+        />
+        <div class="invalid-feedback">กรุณากรอกนามสกุล</div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">อีเมล</label>
+        <input
+          type="email"
+          class="form-control"
+          :class="{ 'is-invalid': !isValid.email }"
+          id="email"
+          v-model="formData.email"
+          @blur="validateField('email')"
+          required
+        />
+        <div class="invalid-feedback">กรุณากรอกอีเมลที่ถูกต้อง</div>
+      </div>
+      <div class="mb-3">
+        <label for="address" class="form-label">ที่อยู่</label>
+        <textarea
+          class="form-control"
+          :class="{ 'is-invalid': !isValid.address }"
+          id="address"
+          rows="3"
+          v-model="formData.address"
+          @blur="validateField('address')"
+          required
+        ></textarea>
+        <div class="invalid-feedback">กรุณากรอกที่อยู่</div>
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">เบอร์โทร</label>
+        <input
+          type="tel"
+          class="form-control"
+          :class="{ 'is-invalid': !isValid.phone }"
+          id="phone"
+          v-model="formData.phone"
+          @blur="validateField('phone')"
+          required
+        />
+        <div class="invalid-feedback">กรุณากรอกเบอร์โทรที่ถูกต้อง</div>
+      </div>
+      <div class="mb-3">
+        <label for="birthdate" class="form-label">วันเดือนปีเกิด</label>
+        <input
+          type="date"
+          class="form-control"
+          :class="{ 'is-invalid': !isValid.birthdate }"
+          id="birthdate"
+          v-model="formData.birthdate"
+          @blur="validateField('birthdate')"
+          required
+        />
+        <div class="invalid-feedback">กรุณาเลือกวันเดือนปีเกิด</div>
+      </div>
+      <button type="submit" class="btn btn-primary" :disabled="!formIsValid">
+        ส่งข้อมูล
+      </button>
+    </form>
+  </div>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        formData: {
+          firstName: "",
+          lastName: "",
+          email: "",
+          address: "",
+          phone: "",
+          birthdate: "",
+        },
+        isValid: {
+          firstName: true,
+          lastName: true,
+          email: true,
+          address: true,
+          phone: true,
+          birthdate: true,
+        },
+      };
+    },
+    computed: {
+      formIsValid() {
+        return Object.values(this.isValid).every((field) => field === true);
+      },
+    },
+    methods: {
+      validateField(field) {
+        switch (field) {
+          case "firstName":
+          case "lastName":
+          case "address":
+            this.isValid[field] = this.formData[field].trim() !== "";
+            break;
+          case "email":
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            this.isValid.email = emailRegex.test(this.formData.email);
+            break;
+          case "phone":
+            const phoneRegex = /^[0-9]{10}$/;
+            this.isValid.phone = phoneRegex.test(this.formData.phone);
+            break;
+          case "birthdate":
+            this.isValid.birthdate = this.formData.birthdate !== "";
+            break;
+        }
+      },
+      validateForm() {
+        Object.keys(this.formData).forEach((field) =>
+          this.validateField(field)
+        );
+      },
+      submitForm() {
+        this.validateForm();
+        if (this.formIsValid) {
+          console.log("Form is valid:", this.formData);
+          // ส่งข้อมูลไปยัง API หรือประมวลผลต่อไป
+          this.resetForm();
+        } else {
+          console.log("Form is invalid");
+        }
+      },
+      resetForm() {
+        this.formData = {
+          firstName: "",
+          lastName: "",
+          email: "",
+          address: "",
+          phone: "",
+          birthdate: "",
+        };
+        Object.keys(this.isValid).forEach(
+          (field) => (this.isValid[field] = true)
+        );
+      },
+    },
+  };
+</script>
