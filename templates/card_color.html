@@ -1,22 +1,30 @@
 {% extends "base.html" %}
 <!---->
 {% block contant %}
-<div class="container">
-  <h1>{{ color }}</h1>
-  <div class="row mt-4">
-    <div class="col"><a href="?color=all">ทั้งหมด</a></div>
-    <div class="col"><a href="?color=yellow">สีเหลือง</a></div>
-    <div class="col"><a href="?color=red">สีแดง</a></div>
-    <div class="col"><a href="?color=green">สีเขียว</a></div>
+<div class="container mt-5">
+  <h1 class="text-center mb-4">{{ color }}</h1>
+  <div class="row text-center mb-4">
+    <div class="col">
+      <a href="?color=all" class="btn btn-outline-dark">การ์ดทั้งหมด</a>
+    </div>
+    <div class="col">
+      <a href="?color=info" class="btn btn-outline-info">สีฟ้า</a>
+    </div>
+    <div class="col">
+      <a href="?color=green" class="btn btn-outline-success">สีเขียว</a>
+    </div>
+    <div class="col">
+      <a href="?color=yellow" class="btn btn-outline-warning">สีเหลือง</a>
+    </div>
   </div>
 
-  <div class="row mt-4">
-    {% if color == 'all' or color == 'yellow' %}
-    <div class="col">
-      <div class="card text-bg-warning mb-3" style="max-width: 18rem">
+  <div class="row">
+    {% if color == 'all' or color == 'info' %}
+    <div class="col-md-3 mb-4">
+      <div class="card text-bg-info h-100">
         <div class="card-header">Header</div>
         <div class="card-body">
-          <h5 class="card-title">Warning card title</h5>
+          <h5 class="card-title">Info card title</h5>
           <p class="card-text">
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
@@ -24,29 +32,25 @@
         </div>
       </div>
     </div>
-    {% endif %}
-    <!---->
-    {% if color == 'all' or color == 'red' %}
-    <div class="col">
-      <div class="card text-bg-danger mb-3" style="max-width: 18rem">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h5 class="card-title">Danger card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-        </div>
-      </div>
-    </div>
-    {% endif %}
-    <!---->
-    {% if color == 'all' or color == 'green' %}
-    <div class="col">
-      <div class="card text-bg-success mb-3" style="max-width: 18rem">
+    {% endif %} {% if color == 'all' or color == 'green' %}
+    <div class="col-md-3 mb-4">
+      <div class="card text-bg-success h-100">
         <div class="card-header">Header</div>
         <div class="card-body">
           <h5 class="card-title">Success card title</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+        </div>
+      </div>
+    </div>
+    {% endif %} {% if color == 'all' or color == 'yellow' %}
+    <div class="col-md-3 mb-4">
+      <div class="card text-bg-warning h-100">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h5 class="card-title">Warning card title</h5>
           <p class="card-text">
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
